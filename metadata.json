@@ -1,0 +1,5 @@
+{
+  "name": "HappyFamily",
+  "description": "가족과 친구들이 선택한 '제외할 숫자'를 기반으로 최적의 로또 번호를 생성해주는 스마트 로또 앱입니다. Gemini AI가 행운의 메시지도 전해줍니다.",
+  "requestFramePermissions": []
+}
