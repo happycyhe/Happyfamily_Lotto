@@ -4,8 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // 현재 환경 변수 로드 (Replit Secrets 포함)
-  // Fix: Cast process to any because the Process type definition might be missing 'cwd' in this environment
-  const env = loadEnv(mode, (process as any).cwd(), '');
+  const env = loadEnv(mode, process.cwd(), '');
   
   return {
     plugins: [react()],
@@ -14,9 +13,15 @@ export default defineConfig(({ mode }) => {
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
     server: {
-      host: '0.0.0.0', // Replit 외부 접속 허용을 위해 필수
+      host: '0.0.0.0',
       port: 5173,
-      allowedHosts: true, // Replit의 동적 도메인 접근 허용
+      // Replit의 동적 도메인 접속 허용 (보안 검사 비활성화)
+      allowedHosts: true,
+    },
+    preview: {
+      host: '0.0.0.0',
+      port: 5173,
+      allowedHosts: true,
     }
   };
 });
