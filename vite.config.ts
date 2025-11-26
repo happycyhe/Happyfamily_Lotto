@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0', // Replit 외부 접속 허용을 위해 필수
       port: 5173,
+      allowedHosts: true, // Replit의 동적 도메인 접근 허용
     }
   };
 });
