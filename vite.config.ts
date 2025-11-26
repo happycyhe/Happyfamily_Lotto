@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       // 코드 내의 process.env.API_KEY를 실제 빌드/실행 타임 환경 변수 값으로 치환
-      'process.env.API_KEY': JSON.stringify(env.API_KEY),
+      'baf5295fe469429159bc88e016c7ee94b8998e55': JSON.stringify(env.API_KEY),
     },
     server: {
       host: '0.0.0.0',
